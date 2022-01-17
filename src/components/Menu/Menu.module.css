@@ -1,0 +1,21 @@
+.main {
+    background: rgb(2,0,36);
+    background: linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(15,61,17,1) 55%, rgba(0,147,19,1) 100%);
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: 0px;
+    padding-top: 5%;
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    background-color: white;
+    width: 10%;
+    margin-left: 45%;
+}

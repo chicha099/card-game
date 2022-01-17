@@ -1,0 +1,18 @@
+.main {
+    background: rgb(2,0,36);
+    background: linear-gradient(4deg, rgba(2,0,36,1) 0%, rgba(15,61,17,1) 55%, rgba(0,147,19,1) 100%);
+    height: 100vh;
+}
+
+.pjSkin {
+    position: fixed;
+    top: 40%;
+    left: 10%;
+}
+
+.foeSkin {
+    position: fixed;
+    top: 38%;
+    left: 70%;
+}
+

@@ -1,0 +1,55 @@
+.main {
+    display: flex;
+}
+
+.you {
+    display: flex;
+    column-gap: 0.5%;
+    margin-top: 30%;
+    margin-left: 5%;
+    width: 50%;
+}
+
+.you :hover {
+    transform: translateY(-10px);
+    transform: scale(1.1);
+    margin-left: 1%;
+    margin-right: 1%;
+    transition-duration: 200ms;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.foe {
+    display: flex;
+    column-gap: 0.5%;
+    margin-top: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 50%;
+}
+
+.foe :hover {
+    transform: translateY(-10px);
+    transform: scale(1.1);
+    margin-left: 1%;
+    margin-right: 1%;
+    transition-duration: 200ms;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.yourCards {
+    color: whitesmoke;
+    position: fixed;
+    top: 89%;
+    left: 24%;
+}
+
+.foeCards {
+    color: whitesmoke;
+    position: fixed;
+    top: 89%;
+    left: 71%;
+}
+
