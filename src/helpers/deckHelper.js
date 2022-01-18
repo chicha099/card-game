@@ -4,7 +4,9 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 4,
+        player: 'your'
     }
     ,
     {
@@ -12,7 +14,9 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 5,
+        player: 'your'
     }
     ,
     {
@@ -20,7 +24,9 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 6,
+        player: 'your'
     }
     ,
     {
@@ -28,7 +34,9 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 7,
+        player: 'your'
     }
     ,
     {
@@ -36,7 +44,9 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 8,
+        player: 'your'
     }
     ,
     {
@@ -44,7 +54,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 9,
+        player: 'your'
     }
     ,
     {
@@ -52,7 +64,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 15,
+        player: 'your'
     }
     ,
     {
@@ -60,7 +74,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 16,
+        player: 'your'
     }
     ,
     {
@@ -68,7 +84,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 10,
+        player: 'your'
     }
     ,
     {
@@ -76,14 +94,18 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 1,
+        player: 'your'
     },
     {
         name: "Strike2",
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 2,
+        player: 'your'
     }
     ,
     {
@@ -91,7 +113,9 @@ export const deck = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 3,
+        player: 'your'
     }
     ,
     {
@@ -99,7 +123,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 11,
+        player: 'your'
     }
     ,
     {
@@ -107,7 +133,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 12,
+        player: 'your'
     }
     ,
     {
@@ -115,7 +143,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 13,
+        player: 'your'
     }
     ,
     {
@@ -123,7 +153,9 @@ export const deck = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 14,
+        player: 'your'
     }
 
 ]
@@ -134,14 +166,18 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 1,
+        player: 'foes'
     },
     {
         name: "Strike2",
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 2,
+        player: 'foes'
     }
     ,
     {
@@ -149,7 +185,9 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 3,
+        player: 'foes'
     }
     ,
     {
@@ -157,7 +195,9 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 4,
+        player: 'foes'
     }
     ,
     {
@@ -165,7 +205,9 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 5,
+        player: 'foes'
     }
     ,
     {
@@ -173,7 +215,9 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 6,
+        player: 'foes'
     }
     ,
     {
@@ -181,7 +225,9 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 7,
+        player: 'foes'
     }
     ,
     {
@@ -189,7 +235,9 @@ export const deck2 = [
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: 6,
         defense: 0,
-        mana: 1
+        mana: 1,
+        id: 8,
+        player: 'foes'
     }
     ,
     {
@@ -197,7 +245,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 9,
+        player: 'foes'
     }
     ,
     {
@@ -205,7 +255,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 10,
+        player: 'foes'
     }
     ,
     {
@@ -213,7 +265,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 11,
+        player: 'foes'
     }
     ,
     {
@@ -221,7 +275,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 12,
+        player: 'foes'
     }
     ,
     {
@@ -229,7 +285,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 13,
+        player: 'foes'
     }
     ,
     {
@@ -237,7 +295,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 14,
+        player: 'foes'
     }
     ,
     {
@@ -245,7 +305,9 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 15,
+        player: 'foes'
     }
     ,
     {
@@ -253,6 +315,8 @@ export const deck2 = [
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
-        mana: 1
+        mana: 1,
+        id: 16,
+        player: 'foes'
     }
 ].sort(() => Math.random() - 0.5);

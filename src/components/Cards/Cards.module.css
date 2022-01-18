@@ -44,6 +44,7 @@
     position: fixed;
     top: 89%;
     left: 24%;
+    pointer-events: none;
 }
 
 .foeCards {
@@ -51,5 +52,6 @@
     position: fixed;
     top: 89%;
     left: 71%;
+    pointer-events: none;
 }
 

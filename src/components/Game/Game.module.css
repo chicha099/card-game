@@ -12,7 +12,11 @@
 
 .foeSkin {
     position: fixed;
-    top: 38%;
+    top: 37.3%;
     left: 70%;
 }
 
+.HP {
+    background-color: rgb(192, 44, 44);
+    color: whitesmoke;
+}

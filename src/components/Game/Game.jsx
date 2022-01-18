@@ -7,19 +7,25 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { nextCards } from "../../actions/actions";
 
-export default function Game() {
-    const yourDeck = useSelector(state => state.yourDeck);
-    const foeDeck = useSelector(state => state.foesDeck);
+export default function Game({history}) {
+    // const yourDeck = useSelector(state => state.yourDeck);
+    // const foeDeck = useSelector(state => state.foesDeck);
     const yourCurrentCards = useSelector(state => state.yourCurrentCards);
     const foesCurrentCards = useSelector(state => state.foesCurrentCards);
+    const yourStats = useSelector(state => state.player.your);
+    const foeStats = useSelector(state => state.player.foes);
     const dispatch = useDispatch();
-
+    console.log("FOE", foeStats.HP)
+    console.log("YOU", yourStats.HP)
 
     function handleTest() {
         dispatch(nextCards())
     }
 
-
+    if(yourStats.HP <= 0){
+        alert("You Died")
+        history.push('/')
+    }
     return (
         <div className={s.main}>
             <Nav />
@@ -27,9 +33,11 @@ export default function Game() {
             <button onClick={() => handleTest()}>TEST</button>
             <div className={s.pjSkin}>
                 <img src="https://art.ngfiles.com/images/707000/707908_gordonshier_samurai-idle-animation.gif?f1544124615" alt="" width='300px' />
+                {yourStats.ARMOR ? yourStats.ARMOR : ""}<h6 className={s.HP} style={{ width: yourStats.HP * 3 }}>{yourStats.HP}/{yourStats.MAXHP}</h6>
             </div>
             <div className={s.foeSkin}>
                 <img src="https://64.media.tumblr.com/1c85a367f7bfe0c879ad842ea50ca28a/tumblr_peociaWn8R1xwpni9o1_500.gifv" alt="" width='300px' />
+                {foeStats.ARMOR ? foeStats.ARMOR : ""}<h6 className={s.HP} style={{ width: foeStats.HP * 3 }}>{foeStats.HP}/{foeStats.MAXHP}</h6>
             </div>
             <Cards yourCards={yourCurrentCards} foeCards={foesCurrentCards} />
         </div>
