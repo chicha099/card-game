@@ -7,6 +7,15 @@ export function nextCards() {
 export function youUseCard(id, player) {
     return {
         type: 'YOU_USE_CARD',
-        payload: { id: id, player: player }
+        payload: {
+            id: id,
+            player: player
+        }
+    }
+}
+
+export function nextTurn() {
+    return {
+        type: 'NEXT_TURN'
     }
 }

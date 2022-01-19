@@ -12,3 +12,8 @@
 * {
     user-select: none;
 }
+
+#mana0 {
+    opacity: 70%;
+    pointer-events: none;
+}

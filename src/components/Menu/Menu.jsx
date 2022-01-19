@@ -6,9 +6,9 @@ import s from './Menu.module.css';
 export default function Menu() {
 const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch()
-    })
+    // useEffect(() => {
+    //     dispatch()
+    // })
     return (
         <div className={s.main}>
             <h1 className={s.title}>CARD GAME</h1>

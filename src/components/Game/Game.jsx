@@ -5,9 +5,9 @@ import Cards from "../Cards/Cards";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { nextCards } from "../../actions/actions";
+import { nextTurn } from "../../actions/actions";
 
-export default function Game({history}) {
+export default function Game({ history }) {
     // const yourDeck = useSelector(state => state.yourDeck);
     // const foeDeck = useSelector(state => state.foesDeck);
     const yourCurrentCards = useSelector(state => state.yourCurrentCards);
@@ -15,23 +15,24 @@ export default function Game({history}) {
     const yourStats = useSelector(state => state.player.your);
     const foeStats = useSelector(state => state.player.foes);
     const dispatch = useDispatch();
-    console.log("FOE", foeStats.HP)
-    console.log("YOU", yourStats.HP)
+    // console.log("FOE", foeStats.HP)
+    // console.log("YOU", yourStats.HP)
 
     function handleTest() {
-        dispatch(nextCards())
+        dispatch(nextTurn())
     }
 
-    if(yourStats.HP <= 0){
-        alert("You Died")
+    if (yourStats.HP <= 0 || foeStats.HP <= 0) {
         history.push('/')
     }
+
     return (
         <div className={s.main}>
             <Nav />
             game
-            <button onClick={() => handleTest()}>TEST</button>
+            <button onClick={() => handleTest()}>End Turn</button>
             <div className={s.pjSkin}>
+                {yourStats.MANA ? ("mana: " + yourStats.MANA) : "NO MANA"}
                 <img src="https://art.ngfiles.com/images/707000/707908_gordonshier_samurai-idle-animation.gif?f1544124615" alt="" width='300px' />
                 {yourStats.ARMOR ? yourStats.ARMOR : ""}<h6 className={s.HP} style={{ width: yourStats.HP * 3 }}>{yourStats.HP}/{yourStats.MAXHP}</h6>
             </div>
