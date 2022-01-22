@@ -171,6 +171,35 @@ export const deck2 = [
         player: 'foes'
     },
     {
+        name: "This enemy intends to Attack for 0-4 damage",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+        attack: Math.ceil(Math.random() * 4),
+        defense: 0,
+        mana: 1,
+        id: 1,
+        player: 'foes'
+    },
+    {
+        name: "This enemy intends to Attack for 5-9 damage.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+        attack: Math.ceil(Math.random() * (9 - 5) + 5),
+        defense: 0,
+        mana: 1,
+        id: 2,
+        player: 'foes'
+    }
+    ,
+    {
+        name: "This enemy intends to Attack for 5-9 damage.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+        attack: Math.ceil(Math.random() * (9 - 5) + 5),
+        defense: 0,
+        mana: 1,
+        id: 2,
+        player: 'foes'
+    }
+    ,
+    {
         name: "This enemy intends to Attack for 5-9 damage.",
         img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
         attack: Math.ceil(Math.random() * (9 - 5) + 5),
@@ -187,6 +216,26 @@ export const deck2 = [
         defense: 0,
         mana: 1,
         id: 3,
+        player: 'foes'
+    }
+    ,
+    {
+        name: "This enemy intends to Attack for 10-14 damage.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+        attack: Math.ceil(Math.random() * (14 - 10) + 10),
+        defense: 0,
+        mana: 1,
+        id: 3,
+        player: 'foes'
+    }
+    ,
+    {
+        name: "This enemy intends to Attack for 15-19 damage.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+        attack: Math.ceil(Math.random() * (19 - 15) + 15),
+        defense: 0,
+        mana: 1,
+        id: 4,
         player: 'foes'
     }
     ,
@@ -281,17 +330,17 @@ export const deck2 = [
     }
     ,
     {
-        name: "Defense1",
+        name: "This enemy intends to block Block",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
-        defense: 5,
+        defense: Math.ceil(Math.random() * (20 - 6) + 6),
         mana: 1,
         id: 9,
         player: 'foes'
     }
     ,
     {
-        name: "Defense2",
+        name: "This enemy intends to inflict a Negative Effect on you.",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
@@ -301,7 +350,7 @@ export const deck2 = [
     }
     ,
     {
-        name: "Defense3",
+        name: "This enemy intends to inflict a powerful Negative Effect on you.",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
@@ -311,7 +360,7 @@ export const deck2 = [
     }
     ,
     {
-        name: "Defense4",
+        name: "This enemy intends to use a Buff.",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
         defense: 5,
@@ -321,42 +370,32 @@ export const deck2 = [
     }
     ,
     {
-        name: "Defense5",
+        name: "This enemy intends to block Block and use inflict a Negative Effect on you.",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
-        defense: 5,
+        defense: Math.ceil(Math.random() * (20 - 6) + 6),
         mana: 1,
         id: 13,
         player: 'foes'
     }
     ,
     {
-        name: "Defense6",
+        name: "This enemy intends to block Block and use inflict a Negative Effect on you.",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
         attack: 0,
-        defense: 5,
+        defense: Math.ceil(Math.random() * (20 - 6) + 6),
+        mana: 1,
+        id: 13,
+        player: 'foes'
+    }
+    ,
+    {
+        name: "This enemy intends to block Block and use a Buff.",
+        img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
+        attack: 0,
+        defense: Math.ceil(Math.random() * (20 - 6) + 6),
         mana: 1,
         id: 14,
-        player: 'foes'
-    }
-    ,
-    {
-        name: "Defense7",
-        img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
-        attack: 0,
-        defense: 5,
-        mana: 1,
-        id: 15,
-        player: 'foes'
-    }
-    ,
-    {
-        name: "Defense8",
-        img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
-        attack: 0,
-        defense: 5,
-        mana: 1,
-        id: 16,
         player: 'foes'
     }
 ].sort(() => Math.random() - 0.5);

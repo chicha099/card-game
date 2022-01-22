@@ -5,7 +5,9 @@ import Cards from "../Cards/Cards";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { nextTurn } from "../../actions/actions";
+import { nextTurn, enemyTurn } from "../../actions/actions";
+import Intents from "../Intents/Intents";
+
 
 export default function Game({ history }) {
     // const yourDeck = useSelector(state => state.yourDeck);
@@ -18,7 +20,9 @@ export default function Game({ history }) {
     // console.log("FOE", foeStats.HP)
     // console.log("YOU", yourStats.HP)
 
+
     function handleTest() {
+        dispatch(enemyTurn(foesCurrentCards))
         dispatch(nextTurn())
     }
 
@@ -37,6 +41,7 @@ export default function Game({ history }) {
                 {yourStats.ARMOR ? yourStats.ARMOR : ""}<h6 className={s.HP} style={{ width: yourStats.HP * 3 }}>{yourStats.HP}/{yourStats.MAXHP}</h6>
             </div>
             <div className={s.foeSkin}>
+                <Intents card={foesCurrentCards} />
                 <img src="https://64.media.tumblr.com/1c85a367f7bfe0c879ad842ea50ca28a/tumblr_peociaWn8R1xwpni9o1_500.gifv" alt="" width='300px' />
                 {foeStats.ARMOR ? foeStats.ARMOR : ""}<h6 className={s.HP} style={{ width: foeStats.HP * 3 }}>{foeStats.HP}/{foeStats.MAXHP}</h6>
             </div>

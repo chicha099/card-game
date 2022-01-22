@@ -1,8 +1,8 @@
 .main {
     background-color: rgb(236, 198, 127);
     border: 1px double black;
-    width: 100%;
-   
+    width: 140px;
+    min-width: 140px;
 }
 
 .noHover{

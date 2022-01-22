@@ -19,3 +19,10 @@ export function nextTurn() {
         type: 'NEXT_TURN'
     }
 }
+
+export function enemyTurn(card) {
+    return {
+        type: 'ENEMY_TURN',
+        payload: card
+    }
+}

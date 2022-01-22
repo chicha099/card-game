@@ -56,20 +56,22 @@ const initialState = {
                 },
                 WEAK: {
                     TURNS: 0
+                },
+                ENTANGLED: {
+                    TURNS: 0
                 }
             }
         },
         foes: {
             MAXHP: 100,
             HP: 100,
-            ARMOR: 0,
-            MANA: 3
+            ARMOR: 0
         }
     },
     yourDeck: yourDeck,
     foesDeck: foesDeck,
     yourCurrentCards: yourDeck.slice(0, 6),
-    foesCurrentCards: foesDeck.slice(0, 6)
+    foesCurrentCards: foesDeck.shift()
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -77,16 +79,18 @@ export default function rootReducer(state = initialState, action) {
 
         case 'YOU_USE_CARD':
             let usedCard = state[`${action.payload.player}CurrentCards`].find(c => c.id === action.payload.id);
+            let newCurrentCards = state.yourCurrentCards.filter(c => c.id !== action.payload.id);
+            console.log(newCurrentCards)
             let players = {
                 foes: 'your',
                 your: 'foes'
             };
-            let otherPlayer = players[action.payload.player]
-            console.log(state.player.your)
+            let otherPlayer = players[action.payload.player];
             if (usedCard.attack) {
                 let dmg = state.player[otherPlayer].ARMOR - usedCard.attack;
                 return {
                     ...state,
+                    yourCurrentCards: [...newCurrentCards],
                     player: {
                         ...state.player,
                         your: {
@@ -104,6 +108,7 @@ export default function rootReducer(state = initialState, action) {
             if (usedCard.defense) {
                 return {
                     ...state,
+                    yourCurrentCards: [...newCurrentCards],
                     player: {
                         ...state.player,
                         [action.payload.player]: {
@@ -116,15 +121,14 @@ export default function rootReducer(state = initialState, action) {
             };
         case 'NEXT_TURN':
             let yourCurrentCards = state.yourCurrentCards.sort(() => Math.random() - 0.5);
-            let foesCurrentCards = state.foesCurrentCards.sort(() => Math.random() - 0.5);
+            let foesCurrentCards = state.foesCurrentCards;
             let yourDeckShifted = state.yourDeck.slice(6);
-            let foesDeckShifted = state.foesDeck.slice(6);
             let newYourCurrentCards = yourDeckShifted.slice(0, 6);
-            let newFoesCurrentCards = foesDeckShifted.slice(0, 6);
+            let newFoesCurrentCards = state.foesDeck.shift()
             return {
                 ...state,
                 yourDeck: [...yourDeckShifted, ...yourCurrentCards],
-                foesDeck: [...foesDeckShifted, ...foesCurrentCards],
+                foesDeck: [...state.foesDeck, foesCurrentCards],
                 yourCurrentCards: newYourCurrentCards,
                 foesCurrentCards: newFoesCurrentCards,
                 player: {
@@ -136,7 +140,25 @@ export default function rootReducer(state = initialState, action) {
                     }
                 }
             };
+        case 'ENEMY_TURN':
+            let dmgToYou = state.player.your.ARMOR - action.payload.attack;
+            console.log(action.payload)
+            return {
+                ...state,
+                player: {
+                    ...state.player,
+                    foes: {
+                        ...state.player.foes,
+                        ARMOR: action.payload.defense
+                    },
+                    your: {
+                        ...state.player.your,
+                        HP: state.player.your.HP + (dmgToYou < 0 ? dmgToYou : 0),
+                        ARMOR: (state.player.your.ARMOR - action.payload.attack) < 0 ? 0 : (state.player.your.ARMOR - action.payload.attack)
 
+                    }
+                }
+            }
 
         default: return state
     }
