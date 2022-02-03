@@ -1,7 +1,9 @@
-import { deck, deck2 } from "../helpers/deckHelper";
+import { deck, deck2, newCards } from "../helpers/deckHelper";
+import { cc } from "../helpers/buffAndDebuffHelper";
 
-const yourDeck = deck.sort(() => Math.random() - 0.5);
+const yourDeck = [...deck, ...newCards].sort(() => Math.random() - 0.5);
 const foesDeck = deck2.sort(() => Math.random() - 0.5);
+const percentage = (per) => 100 / per;
 
 const initialState = {
   turn: "YOU",
@@ -60,12 +62,67 @@ const initialState = {
         ENTANGLED: {
           TURNS: 0,
         },
+        NONE: {
+          TURNS: 0,
+        },
       },
     },
     foes: {
       MAXHP: 100,
       HP: 100,
       ARMOR: 0,
+      BUFF: {
+        STRENGTH: {
+          TURNS: 0,
+        },
+        DEXTERITY: {
+          TURNS: 0,
+        },
+        THORNS: {
+          TURNS: 0,
+        },
+        RITUAL: {
+          TURNS: 0,
+        },
+        REGEN: {
+          TURNS: 0,
+        },
+        METALLICIZE: {
+          TURNS: 0,
+        },
+        INTANGIBLE: {
+          TURNS: 0,
+        },
+        ARTIFACT: {
+          TURNS: 0,
+        },
+      },
+      DEBUFFS: {
+        ANTIDEXTERITY: {
+          TURNS: 0,
+        },
+        ANTISTRENGTH: {
+          TURNS: 0,
+        },
+        FRAIL: {
+          TURNS: 0,
+        },
+        POISON: {
+          TURNS: 0,
+        },
+        VULNERABLE: {
+          TURNS: 0,
+        },
+        WEAK: {
+          TURNS: 0,
+        },
+        ENTANGLED: {
+          TURNS: 0,
+        },
+        NONE: {
+          TURNS: 0,
+        },
+      },
     },
   },
   yourDeck: yourDeck,
@@ -84,14 +141,19 @@ export default function rootReducer(state = initialState, action) {
       let newCurrentCards = state.yourCurrentCards.filter(
         (c) => c.id !== action.payload.id
       );
-      console.log(newCurrentCards);
+      console.log(usedCard);
       let players = {
         foes: "your",
         your: "foes",
       };
       let otherPlayer = players[action.payload.player];
       if (usedCard.attack) {
-        let dmg = state.player[otherPlayer].ARMOR - usedCard.attack;
+        let dmg =
+          state.player[otherPlayer].ARMOR -
+          (usedCard.attack +
+            (usedCard.attack *
+              Boolean(state.player[otherPlayer].DEBUFFS.VULNERABLE.TURNS)) /
+              percentage(cc.VULNERABLE));
         return {
           ...state,
           yourCurrentCards: [...newCurrentCards],
@@ -109,6 +171,12 @@ export default function rootReducer(state = initialState, action) {
                 state.player[otherPlayer].ARMOR - usedCard.attack < 0
                   ? 0
                   : state.player[otherPlayer].ARMOR - usedCard.attack,
+              DEBUFFS: {
+                ...state.player[otherPlayer].DEBUFFS,
+                [usedCard.debuff.type]: {
+                  TURNS: usedCard.debuff.turns,
+                },
+              },
             },
           },
         };
@@ -125,6 +193,22 @@ export default function rootReducer(state = initialState, action) {
               MANA: state.player.your.MANA - usedCard.mana,
               ARMOR:
                 state.player[action.payload.player].ARMOR + usedCard.defense,
+            },
+          },
+        };
+      } else {
+        return {
+          ...state,
+          player: {
+            ...state.player,
+            [usedCard.objective]: {
+              ...state.player[usedCard.objective],
+              DEBUFFS: {
+                ...state.player[usedCard.objective].DEBUFFS,
+                [usedCard.debuff.type]: {
+                  TURNS: usedCard.debuff.turns,
+                },
+              },
             },
           },
         };
@@ -158,8 +242,14 @@ export default function rootReducer(state = initialState, action) {
         },
       };
     case "ENEMY_TURN":
-      let dmgToYou = state.player.your.ARMOR - action.payload.attack;
-      console.log(action.payload);
+      let dmgToYou =
+        state.player.your.ARMOR -
+        action.payload.attack +
+        state.player.foes.DEBUFFS.ANTISTRENGTH.TURNS +
+        Boolean(state.player.foes.DEBUFFS.WEAK.TURNS) *
+          Math.floor(action.payload.attack / 4);
+      console.log("dmgtoyou", dmgToYou);
+      console.log("actionpayload", action.payload.attack);
       return {
         ...state,
         player: {
@@ -167,6 +257,27 @@ export default function rootReducer(state = initialState, action) {
           foes: {
             ...state.player.foes,
             ARMOR: action.payload.defense,
+            DEBUFFS: {
+              ...state.player.foes.DEBUFFS,
+              VULNERABLE: {
+                TURNS:
+                  state.player.foes.DEBUFFS.VULNERABLE.TURNS > 0
+                    ? state.player.foes.DEBUFFS.VULNERABLE.TURNS - 1
+                    : state.player.foes.DEBUFFS.VULNERABLE.TURNS,
+              },
+              WEAK: {
+                TURNS:
+                  state.player.foes.DEBUFFS.WEAK.TURNS > 0
+                    ? state.player.foes.DEBUFFS.WEAK.TURNS - 1
+                    : state.player.foes.DEBUFFS.WEAK.TURNS,
+              },
+              ANTISTRENGTH: {
+                TURNS:
+                  state.player.foes.DEBUFFS.ANTISTRENGTH.TURNS > 0
+                    ? state.player.foes.DEBUFFS.ANTISTRENGTH.TURNS - 1
+                    : state.player.foes.DEBUFFS.ANTISTRENGTH.TURNS,
+              },
+            },
           },
           your: {
             ...state.player.your,

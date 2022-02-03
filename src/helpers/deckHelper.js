@@ -5,6 +5,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 4,
     player: "your",
   },
@@ -14,6 +18,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 5,
     player: "your",
   },
@@ -23,6 +31,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 6,
     player: "your",
   },
@@ -32,6 +44,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 7,
     player: "your",
   },
@@ -41,6 +57,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 8,
     player: "your",
   },
@@ -50,6 +70,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 9,
     player: "your",
   },
@@ -59,6 +83,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 15,
     player: "your",
   },
@@ -68,6 +96,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 16,
     player: "your",
   },
@@ -77,6 +109,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 10,
     player: "your",
   },
@@ -86,6 +122,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 1,
     player: "your",
   },
@@ -95,6 +135,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 2,
     player: "your",
   },
@@ -104,6 +148,10 @@ export const deck = [
     attack: 6,
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 3,
     player: "your",
   },
@@ -113,6 +161,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 11,
     player: "your",
   },
@@ -122,6 +174,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 12,
     player: "your",
   },
@@ -131,6 +187,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 13,
     player: "your",
   },
@@ -140,6 +200,10 @@ export const deck = [
     attack: 0,
     defense: 5,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 14,
     player: "your",
   },
@@ -152,6 +216,10 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * 4),
     defense: 0,
     mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 1,
     player: "foes",
   },
@@ -161,15 +229,10 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * 4),
     defense: 0,
     mana: 1,
-    id: 1,
-    player: "foes",
-  },
-  {
-    name: "This enemy intends to Attack for 5-9 damage.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
-    attack: Math.ceil(Math.random() * (9 - 5) + 5),
-    defense: 0,
-    mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
     id: 2,
     player: "foes",
   },
@@ -179,7 +242,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (9 - 5) + 5),
     defense: 0,
     mana: 1,
-    id: 2,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 3,
     player: "foes",
   },
   {
@@ -188,7 +255,24 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (9 - 5) + 5),
     defense: 0,
     mana: 1,
-    id: 2,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 4,
+    player: "foes",
+  },
+  {
+    name: "This enemy intends to Attack for 5-9 damage.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+    attack: Math.ceil(Math.random() * (9 - 5) + 5),
+    defense: 0,
+    mana: 1,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 5,
     player: "foes",
   },
   {
@@ -197,7 +281,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (14 - 10) + 10),
     defense: 0,
     mana: 1,
-    id: 3,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 6,
     player: "foes",
   },
   {
@@ -206,7 +294,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (14 - 10) + 10),
     defense: 0,
     mana: 1,
-    id: 3,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 7,
     player: "foes",
   },
   {
@@ -215,7 +307,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (19 - 15) + 15),
     defense: 0,
     mana: 1,
-    id: 4,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 8,
     player: "foes",
   },
   {
@@ -224,7 +320,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (19 - 15) + 15),
     defense: 0,
     mana: 1,
-    id: 4,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 9,
     player: "foes",
   },
   {
@@ -233,7 +333,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (24 - 20) + 20),
     defense: 0,
     mana: 1,
-    id: 5,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 10,
     player: "foes",
   },
   {
@@ -242,7 +346,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (29 - 25) + 25),
     defense: 0,
     mana: 1,
-    id: 6,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 11,
     player: "foes",
   },
   {
@@ -251,7 +359,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (50 - 30) + 30),
     defense: 0,
     mana: 1,
-    id: 7,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 12,
     player: "foes",
   },
   {
@@ -260,7 +372,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * 4),
     defense: 0,
     mana: 1,
-    id: 8,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 13,
     player: "foes",
   },
   {
@@ -269,7 +385,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (14 - 10) + 10),
     defense: 0,
     mana: 1,
-    id: 8,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 14,
     player: "foes",
   },
   {
@@ -278,7 +398,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (15 - 19) + 19),
     defense: 0,
     mana: 1,
-    id: 8,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 15,
     player: "foes",
   },
   {
@@ -287,7 +411,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (24 - 20) + 20),
     defense: 0,
     mana: 1,
-    id: 8,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 16,
     player: "foes",
   },
   {
@@ -296,7 +424,11 @@ export const deck2 = [
     attack: Math.ceil(Math.random() * (29 - 25) + 25),
     defense: 0,
     mana: 1,
-    id: 8,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 17,
     player: "foes",
   },
   {
@@ -305,7 +437,11 @@ export const deck2 = [
     attack: 0,
     defense: Math.ceil(Math.random() * (20 - 6) + 6),
     mana: 1,
-    id: 9,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 18,
     player: "foes",
   },
   {
@@ -314,7 +450,11 @@ export const deck2 = [
     attack: 0,
     defense: 5,
     mana: 1,
-    id: 10,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 19,
     player: "foes",
   },
   {
@@ -323,7 +463,11 @@ export const deck2 = [
     attack: 0,
     defense: 5,
     mana: 1,
-    id: 11,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 20,
     player: "foes",
   },
   {
@@ -332,7 +476,11 @@ export const deck2 = [
     attack: 0,
     defense: 5,
     mana: 1,
-    id: 12,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 21,
     player: "foes",
   },
   {
@@ -341,7 +489,11 @@ export const deck2 = [
     attack: 0,
     defense: Math.ceil(Math.random() * (20 - 6) + 6),
     mana: 1,
-    id: 13,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 22,
     player: "foes",
   },
   {
@@ -350,7 +502,11 @@ export const deck2 = [
     attack: 0,
     defense: Math.ceil(Math.random() * (20 - 6) + 6),
     mana: 1,
-    id: 13,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 23,
     player: "foes",
   },
   {
@@ -359,36 +515,67 @@ export const deck2 = [
     attack: 0,
     defense: Math.ceil(Math.random() * (20 - 6) + 6),
     mana: 1,
-    id: 14,
+    debuff: {
+      type: "NONE",
+      turns: 2,
+    },
+    id: 24,
     player: "foes",
   },
 ].sort(() => Math.random() - 0.5);
 
-const newCards = [
+export const newCards = [
   {
     name: "Bash1",
-    img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
     attack: 8,
     defense: 0,
     debuff: {
       type: "VULNERABLE",
       turns: 2,
     },
-    mana: 2,
-    id: 17,
+    mana: 1,
+    id: 19,
     player: "your",
   },
   {
     name: "Bash2",
-    img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e988f5dbfac3240.png",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
     attack: 8,
     defense: 0,
     debuff: {
       type: "VULNERABLE",
       turns: 2,
     },
-    mana: 2,
-    id: 18,
+    mana: 1,
+    id: 20,
     player: "your",
+  },
+  {
+    name: "Clothesline1",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+    attack: 12,
+    defense: 0,
+    debuff: {
+      type: "WEAK",
+      turns: 2,
+    },
+    mana: 1,
+    id: 21,
+    player: "your",
+  },
+  {
+    name: "Disarm1",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/df/Sword_Pixel_art_-_Radin.png",
+    attack: 0,
+    defense: 0,
+    debuff: {
+      type: "ANTISTRENGTH",
+      turns: 2,
+    },
+    mana: 1,
+    id: 22,
+    player: "your",
+    objective: "foes"
   },
 ];

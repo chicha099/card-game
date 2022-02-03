@@ -7,7 +7,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { nextTurn, enemyTurn } from "../../actions/actions";
 import Intents from "../Intents/Intents";
-
+import vulnerable from "../../img/vulnerable.png"
+import weak from "../../img/weak.png"
+import frail from "../../img/frail.png"
+import strength from "../../img/strength.png"
 
 export default function Game({ history }) {
     // const yourDeck = useSelector(state => state.yourDeck);
@@ -17,7 +20,7 @@ export default function Game({ history }) {
     const yourStats = useSelector(state => state.player.your);
     const foeStats = useSelector(state => state.player.foes);
     const dispatch = useDispatch();
-    // console.log("FOE", foeStats.HP)
+    console.log("FOE", foeStats)
     // console.log("YOU", yourStats.HP)
 
 
@@ -44,6 +47,12 @@ export default function Game({ history }) {
                 <Intents card={foesCurrentCards} />
                 <img src="https://64.media.tumblr.com/1c85a367f7bfe0c879ad842ea50ca28a/tumblr_peociaWn8R1xwpni9o1_500.gifv" alt="" width='300px' />
                 {foeStats.ARMOR ? foeStats.ARMOR : ""}<h6 className={s.HP} style={{ width: foeStats.HP * 3 }}>{foeStats.HP}/{foeStats.MAXHP}</h6>
+                <div className={s.debuffs}>
+                {foeStats.DEBUFFS.VULNERABLE.TURNS > 0 ? <div>{foeStats.DEBUFFS.VULNERABLE.TURNS}<img src={vulnerable} alt="" /></div> : ""}
+                {foeStats.DEBUFFS.WEAK.TURNS > 0 ? <div>{foeStats.DEBUFFS.WEAK.TURNS}<img src={weak} alt="" /></div> : ""}
+                {foeStats.DEBUFFS.FRAIL.TURNS > 0 ? <div>{foeStats.DEBUFFS.FRAIL.TURNS}<img src={frail} alt="" /></div> : ""}
+                {foeStats.DEBUFFS.ANTISTRENGTH.TURNS > 0 ? <div>-{foeStats.DEBUFFS.ANTISTRENGTH.TURNS + foeStats.BUFF.STRENGTH.TURNS}<img src={strength} alt="" /></div> : ""}
+                </div>
             </div>
             <Cards yourCards={yourCurrentCards} foeCards={foesCurrentCards} />
         </div>

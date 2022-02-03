@@ -21,3 +21,17 @@
     background-color: rgb(192, 44, 44);
     color: whitesmoke;
 }
+
+.debuffs > div > img{
+    width: 30px;
+}
+.debuffs > div {
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.debuffs {
+    width: 30px;
+    display: flex;
+}
